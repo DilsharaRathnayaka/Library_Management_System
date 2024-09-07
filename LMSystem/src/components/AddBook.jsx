@@ -33,8 +33,8 @@ function AddBook() {
         </h2>
         <form onSubmit={handleAddBook} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Book Name:
+            <label className="block text-20 font-medium text-gray-700 mb-1">
+              Book Name
             </label>
             <input
               type="text"
@@ -46,8 +46,8 @@ function AddBook() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Author Name:
+            <label className="block text-20 font-medium text-gray-700 mb-1">
+              Author Name
             </label>
             <input
               type="text"
@@ -59,8 +59,8 @@ function AddBook() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              ISBN:
+            <label className="block text-20 font-medium text-gray-700 mb-1">
+              ISBN
             </label>
             <input
               type="text"
