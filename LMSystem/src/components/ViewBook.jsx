@@ -23,7 +23,7 @@ function ViewBooks() {
   }, []);
 
   return (
-    <div className="container mx-auto p-4">
+    <div className=" mx-auto p-4 h-screen  bg-[#c7b0ee]">
       <h2 className="text-center text-4xl font-bold text-blue-600 mb-6">All Books</h2>
       <div className="card-grid flex flex-wrap justify-center gap-8">
         {books.map((book) => (
