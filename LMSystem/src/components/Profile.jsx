@@ -1,6 +1,7 @@
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import './AddBook.css'; // Import the CSS file
 
 function Profile() {
   const user = auth.currentUser;
@@ -18,12 +19,12 @@ function Profile() {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg text-center">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Profile</h2>
+    <div className="add-book-container"> {/* Updated class */}
+      <div className="add-book-card"> {/* Updated class */}
+        <h2 className="add-book-title">Profile</h2> {/* Updated class */}
         <div className="text-left">
-          <p className="text-lg text-gray-700 mb-2">
-            <span className="font-bold">Email:</span> {user.email}
+          <p className="label"> {/* Updated class */}
+            <span className="font-semibold text-teal-400">Email:</span> {user.email}
           </p>
         </div>
       </div>
