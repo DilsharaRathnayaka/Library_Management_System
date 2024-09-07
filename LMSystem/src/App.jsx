@@ -5,45 +5,56 @@ import Profile from './components/Profile';
 import AddBook from './components/AddBook';
 import EditBook from './components/EditBook';
 import ViewBook from './components/ViewBook';
-import Footer from './components/Footer'; // Ensure Footer component filename matches
-import './App.css'; // Import the CSS file for styling
-
+import Footer from './components/Footer';
+import './App.css'; 
 
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
-        <nav className="navbar">
-          <NavLink
-            to="/register"
-            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-          >
-            Register
-          </NavLink>
-          <NavLink
-            to="/login"
-            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-          >
-            Login
-          </NavLink>
-          <NavLink
-            to="/profile"
-            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-          >
-            Profile
-          </NavLink>
-          <NavLink
-            to="/add"
-            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-          >
-            Add Book
-          </NavLink>
-          <NavLink
-            to="/viewbook"
-            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-          >
-            View Books
-          </NavLink>
+        <nav className="bg-[#000000] p-5 shadow-md">
+          <div className="container mx-auto flex justify-around items-center">
+            <NavLink
+              to="/register"
+              className={({ isActive }) =>
+                `text-white px-10 py-2 rounded-lg ${isActive ? 'bg-[#c7b0ee]' : 'hover:bg-[#000000]'} transition-colors`
+              }
+            >
+              Register
+            </NavLink>
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                `text-white px-10 py-2 rounded-lg ${isActive ? 'bg-[#c7b0ee]' : 'hover:bg-gray-700'} transition-colors`
+              }
+            >
+              Login
+            </NavLink>
+            <NavLink
+              to="/profile"
+              className={({ isActive }) =>
+                `text-white px-10 py-2 rounded-lg ${isActive ? 'bg-[#c7b0ee]' : 'hover:bg-gray-700'} transition-colors`
+              }
+            >
+              Profile
+            </NavLink>
+            <NavLink
+              to="/add"
+              className={({ isActive }) =>
+                `text-white px-4 py-2 rounded-lg ${isActive ? 'bg-[#c7b0ee]' : 'hover:bg-gray-700'} transition-colors`
+              }
+            >
+              Add Book
+            </NavLink>
+            <NavLink
+              to="/viewbook"
+              className={({ isActive }) =>
+                `text-white px-4 py-2 rounded-lg ${isActive ? 'bg-[#c7b0ee]' : 'hover:bg-gray-700'} transition-colors`
+              }
+            >
+              View Books
+            </NavLink>
+          </div>
         </nav>
 
         <main className="flex-1">

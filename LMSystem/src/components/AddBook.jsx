@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { db } from '../firebase';
 import { collection, addDoc } from 'firebase/firestore';
-import './AddBook.css'; // Ensure correct path
 
 function AddBook() {
   const [bookName, setBookName] = useState('');
@@ -27,44 +26,55 @@ function AddBook() {
   };
 
   return (
-    <div className="add-book-container">
-      <div className="add-book-card">
-        <h2 className="add-book-title">Add Book</h2>
-        <form onSubmit={handleAddBook}>
+    <div className="flex justify-center items-center h-screen bg-[#c7b0ee]">
+      <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-md transition-transform duration-300">
+        <h2 className="text-3xl font-bold text-black mb-6 text-center">
+          Add Book
+        </h2>
+        <form onSubmit={handleAddBook} className="space-y-4">
           <div>
-            <label className="label">Book Name:</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Book Name:
+            </label>
             <input
               type="text"
               placeholder="Book Name"
               value={bookName}
               onChange={(e) => setBookName(e.target.value)}
-              className="input"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 outline-none transition-colors duration-200"
               required
             />
           </div>
           <div>
-            <label className="label">Author Name:</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Author Name:
+            </label>
             <input
               type="text"
               placeholder="Author Name"
               value={authorName}
               onChange={(e) => setAuthorName(e.target.value)}
-              className="input"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 outline-none transition-colors duration-200"
               required
             />
           </div>
           <div>
-            <label className="label">ISBN:</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              ISBN:
+            </label>
             <input
               type="text"
               placeholder="ISBN"
               value={isbn}
               onChange={(e) => setIsbn(e.target.value)}
-              className="input"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 outline-none transition-colors duration-200"
               required
             />
           </div>
-          <button type="submit" className="submit-btn">
+          <button
+            type="submit"
+            className="w-full bg-black text-white font-medium py-3 rounded-lg hover:bg-[#c7b0ee] transition-colors duration-300"
+          >
             Add Book
           </button>
         </form>
