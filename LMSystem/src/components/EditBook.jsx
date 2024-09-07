@@ -45,12 +45,12 @@ function EditBook() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div className="flex justify-center items-center min-h-screen bg-[#c7b0ee]">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
-        <h2 className="text-2xl font-bold text-blue-500 mb-6 text-center">Edit Book</h2>
+        <h2 className="text-2xl font-bold text-black-500 mb-6 text-center">Edit Book</h2>
         <form onSubmit={handleUpdateBook} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Book Name:</label>
+            <label className="block text-20 font-medium text-gray-700 mb-1">Book Name</label>
             <input
               type="text"
               placeholder="Book Name"
@@ -61,7 +61,7 @@ function EditBook() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Author Name:</label>
+            <label className="block text-20 font-medium text-gray-700 mb-1">Author Name</label>
             <input
               type="text"
               placeholder="Author Name"
@@ -72,7 +72,7 @@ function EditBook() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">ISBN:</label>
+            <label className="block text-20 font-medium text-gray-700 mb-1">ISBN</label>
             <input
               type="text"
               placeholder="ISBN"
@@ -84,7 +84,7 @@ function EditBook() {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-3 rounded-md font-medium hover:bg-blue-600 transition-colors duration-300"
+            className="w-full bg-black text-white py-3 rounded-md font-medium hover:bg-[#c7b0ee] transition-colors duration-300"
           >
             Update Book
           </button>
