@@ -35,11 +35,11 @@ function Profile() {
         <h2 className="text-3xl font-bold text-center text-Black-600 mb-10">Profile</h2> {/* Title */}
         <div className="text-left space-y-4"> {/* Content section */}
           <p className="text-lg">
-            <span className="font-semibold text-teal-400">Email:</span> {user.email}
+            <span className="font-semibold text-black-400">Email:</span> {user.email}
           </p>
 
           {/* List of borrowed books */}
-          <h3 className="text-2xl font-semibold text-teal-400 mt-6">Borrowed Books</h3>
+          <h3 className="text-2xl font-semibold text-black-400 mt-6">Borrowed Books</h3>
           {borrowedBooks.length > 0 ? (
             <ul className="list-disc ml-6 space-y-2">
               {borrowedBooks.map((book, index) => (
