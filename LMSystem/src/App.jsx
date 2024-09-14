@@ -11,9 +11,9 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
-        <nav className="bg-[#000000] p-5 shadow-md">
-          <div className="container mx-auto flex justify-around items-center">
+      <div className="flex space-x-0 flex-col min-h-screen">
+        <nav className="bg-[#000000] p-3 shadow-md">
+          <div className="space-x-2 container mx-auto flex justify-around items-center">
             <NavLink
               to="/register"
               className={({ isActive }) =>

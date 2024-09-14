@@ -26,7 +26,7 @@ function Login() {
         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Login</h2>
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
-            <label className="block text-gray-700 font-medium mb-2">Email:</label>
+            <label className="block text-gray-700 font-medium mb-2">Email</label>
             <input
               type="email"
               placeholder="Email"
@@ -37,7 +37,7 @@ function Login() {
             />
           </div>
           <div>
-            <label className="block text-gray-700 font-medium mb-1">Password:</label>
+            <label className="block text-gray-700 font-medium mb-1">Password</label>
             <input
               type="password"
               placeholder="Password"
