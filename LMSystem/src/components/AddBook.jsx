@@ -26,7 +26,7 @@ function AddBook() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-[#c7b0ee]">
+    <div className="flex justify-center items-center h-screen bg-[#f4e5ff]">
       <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-md transition-transform duration-300">
         <h2 className="text-3xl font-bold text-black mb-6 text-center">
           Add Book
