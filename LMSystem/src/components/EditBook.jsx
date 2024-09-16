@@ -45,7 +45,7 @@ function EditBook() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#c7b0ee]">
+    <div className="flex justify-center items-center min-h-screen bg-[#f4e5ff]">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
         <h2 className="text-2xl font-bold text-black-500 mb-6 text-center">Edit Book</h2>
         <form onSubmit={handleUpdateBook} className="space-y-6">
