@@ -53,6 +53,7 @@ function ViewBooks() {
                 </Link>
                 <DeleteBook id={book.id} />
               </div>
+
             </div>
           ))}
         </div>
