@@ -54,7 +54,7 @@ function HomePage() {
     <div className="min-h-screen bg-[#f4e5ff] font-sans">
       {/* Slider Section */}
       <div className="bg-black text-white py-10">
-        <h1 className="text-4xl font-bold text-center mb-14">Welcome to SmartLib</h1>
+        <h1 className="text-4xl font-bold text-center mb-14">Welcome to SmartLib!</h1>
         <div className="text-center text-2xl font-medium italic px-6 relative overflow-hidden">
           <p className="inline-block max-w-4xl mx-auto break-words text-white animate-fadeInOut">
             {quotes[currentQuote]}
