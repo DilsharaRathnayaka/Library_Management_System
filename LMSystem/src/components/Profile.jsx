@@ -1,7 +1,8 @@
-import { auth, db } from '../firebase'; // Import Firestore DB
+import { auth, db } from '../firebase'; // Import Firestore DB and auth
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { collection, getDoc, doc, getDocs } from 'firebase/firestore'; // Add getDoc for single document fetch
+import { collection, getDoc, doc, getDocs, deleteDoc } from 'firebase/firestore'; // Add deleteDoc for profile deletion
+import { signOut } from 'firebase/auth'; // Add signOut for logging out
 
 function Profile() {
   const user = auth.currentUser;
@@ -39,6 +40,31 @@ function Profile() {
     }
   }, [user, navigate]);
 
+  // Delete user profile function
+  const handleDeleteProfile = async () => {
+    if (window.confirm('Are you sure you want to delete your profile? This action cannot be undone.')) {
+      try {
+        await deleteDoc(doc(db, 'users', user.uid)); // Delete user's profile from Firestore
+        alert('Profile deleted successfully.');
+        signOut(auth); // Log out user after profile deletion
+        navigate('/login');
+      } catch (error) {
+        alert('Error deleting profile: ' + error.message);
+      }
+    }
+  };
+
+  // Logout function
+  const handleLogout = async () => {
+    try {
+      await signOut(auth); // Log out user
+      alert('You have been logged out.');
+      navigate('/login');
+    } catch (error) {
+      alert('Error logging out: ' + error.message);
+    }
+  };
+
   if (!user) {
     return null;
   }
@@ -73,6 +99,11 @@ function Profile() {
               </div>
             </>
           )}
+          <p className="mt-10 text-center text-gray-600 italic">
+            {role === 'member'
+             ? `"Books are a uniquely portable magic." - Stephen King`
+             : `"Saving one book at a time, changing the world with knowledge." - Unknown`}
+          </p>
 
           {role === 'admin' && (
             <div className="flex justify-center mt-4 space-x-4">
@@ -82,15 +113,14 @@ function Profile() {
               <button className="bg-[#000000] text-white py-2 px-4 rounded hover:bg-[#c7b0ee] transition">
                 <a href="/Viewbook">View Books</a>
               </button>
-              {/* New Generate Report button */}
+              {/* Generate Report button */}
               <button className="bg-[#000000] text-white py-2 px-4 rounded hover:bg-[#c7b0ee] transition">
                 <a href="/ReportTypes">Generate Report</a>
               </button>
             </div>
           )}
 
-
-          {/* Add Edit Profile button */}
+          {/* Edit Profile button */}
           <div className="flex justify-center mt-4">
             <button
               className="bg-[#000000] text-white py-2 px-4 rounded hover:bg-[#c7b0ee] transition"
@@ -99,13 +129,27 @@ function Profile() {
               Edit Profile
             </button>
           </div>
-        </div>
 
-        <p className="mt-10 text-center text-gray-600 italic">
-          {role === 'member'
-            ? `"Books are a uniquely portable magic." - Stephen King`
-            : `"Saving one book at a time, changing the world with knowledge." - Unknown`}
-        </p>
+         {/* Delete Profile button */}
+         <div className="flex justify-center mt-4">
+            <button
+              className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-500 transition"
+              onClick={handleDeleteProfile}
+            >
+              Delete Profile
+            </button>
+          </div>
+
+        {/* Logout button */}
+        <div className="flex justify-center mt-4">
+            <button
+              className="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-500 transition"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
