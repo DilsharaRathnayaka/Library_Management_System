@@ -31,7 +31,6 @@ function ViewBooks() {
               key={book.id}
               className="card bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl hover:transform hover:-translate-y-2 transition"
             >
-              {/* Display Book Image */}
               <div className="relative">
                 <img
                   src={book.PhotoURL}
