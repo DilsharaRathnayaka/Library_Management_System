@@ -52,7 +52,6 @@ function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#f4e5ff] font-sans">
-      {/* Slider Section */}
       <div className="bg-black text-white py-10">
         <h1 className="text-4xl font-bold text-center mb-14">Welcome to SmartLib!</h1>
         <div className="text-center text-2xl font-medium italic px-6 relative overflow-hidden">
@@ -116,7 +115,6 @@ function HomePage() {
         </div>
       </div>
 
-      {/* Join as a Member Section */}
       <div className="text-center py-20 bg-black text-white">
         <h2 className="text-2xl font-bold mb-4">Become a SmartLib Member</h2>
         <p className="text-lg mb-6">Join our community and access thousands of books!</p>
