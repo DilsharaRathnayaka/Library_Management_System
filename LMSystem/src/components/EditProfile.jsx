@@ -8,7 +8,7 @@ function EditProfile() {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [role, setRole] = useState(''); // State for role (Profile type)
+  const [role, setRole] = useState(''); 
 
   useEffect(() => {
     if (!user) {

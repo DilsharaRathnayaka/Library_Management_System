@@ -40,7 +40,6 @@ function ViewBooks() {
                   style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'contain' }}
                 />
               </div>
-              {/* Center align Book Name */}
               <h3 className="text-2xl font-semibold mb-4 text-center">{book.BookName}</h3>
               <p className="mb-2">Author: {book.AuthorName}</p>
               <p className="mb-2">ISBN: {book.ISBN}</p>
