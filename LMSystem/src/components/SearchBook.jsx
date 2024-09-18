@@ -105,7 +105,6 @@ function SearchBook() {
             <h3 className="text-2xl font-semibold mb-2 text-center">{book.BookName}</h3>
             <p className="mb-2 text-center">{book.AuthorName}</p>
 
-            {/* Borrow button */}
             <div className="flex justify-center space-x-4 mt-4">
               <button
                 onClick={() => handleBorrow(book)}
