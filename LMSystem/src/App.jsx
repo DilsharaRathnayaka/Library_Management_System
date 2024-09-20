@@ -9,14 +9,20 @@ import ViewBook from './components/ViewBook';
 import SearchBook from './components/SearchBook';
 import EditProfile from './components/EditProfile';
 import ReportTypes from './components/ReportTypes';
-// import BooksBorrowedReport from './components/BooksBorrowedReport';
-// import MemberActivityReport from './components/MemberActivityReport';
-// import BookAvailabilityReport from './components/BookAvailabilityReport';
 import Footer from './components/Footer';
 import './App.css';
 import logo from './assets/logo.png';
+import { useState } from 'react';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    // Redirect or perform search logic here
+    console.log('Searching for:', searchQuery);
+  };
+
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
@@ -27,13 +33,30 @@ function App() {
             <NavLink to="/home">
               <img src={logo} alt="Logo" className="h-12 w-30" />
             </NavLink>
-            
+
             {/* Navigation links */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 items-center">
+            <NavLink
+                to="/home"
+                className={({ isActive }) =>
+                  `text-white px-4 py-2 rounded-lg ${isActive ? 'bg-[#c7b0ee]' : 'hover:bg-gray-700'} transition-colors`
+                }
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/searchbook"
+                className={({ isActive }) =>
+                  `text-white px-4 py-2 rounded-lg ${isActive ? 'bg-[#c7b0ee]' : 'hover:bg-gray-700'} transition-colors`
+                }
+              >
+                Search Books
+              </NavLink>
+              
               <NavLink
                 to="/register"
                 className={({ isActive }) =>
-                  `text-white px-4 py-2 rounded-lg ${isActive ? 'bg-[#c7b0ee]' : 'hover:bg-[#000000]'} transition-colors`
+                  `text-white px-4 py-2 rounded-lg ${isActive ? 'bg-[#c7b0ee]' : 'hover:bg-gray-700'} transition-colors`
                 }
               >
                 Register
@@ -54,20 +77,13 @@ function App() {
               >
                 Profile
               </NavLink>
-              <NavLink
-                to="/searchbook"
-                className={({ isActive }) =>
-                  `text-white px-4 py-2 rounded-lg ${isActive ? 'bg-[#c7b0ee]' : 'hover:bg-gray-700'} transition-colors`
-                }
-              >
-                Search Books
-              </NavLink>
+
             </div>
           </div>
         </nav>
 
         {/* Main content */}
-        <main className="flex-1 pt-16"> {/* Added padding-top to avoid content overlap with fixed navbar */}
+        <main className="flex-1 pt-16">
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/register" element={<Register />} />
@@ -79,13 +95,10 @@ function App() {
             <Route path="/searchbook" element={<SearchBook />} />
             <Route path="/editprofile" element={<EditProfile />} />
             <Route path="/reporttypes" element={<ReportTypes />} />
-            {/* <Route path="/borrowedbooks" element={<BooksBorrowedReport />} />
-            <Route path="/memberactivity" element={<MemberActivityReport />} />
-            <Route path="/bookavailability" element={<BookAvailabilityReport />} /> */}
           </Routes>
         </main>
 
-        <Footer /> {/* Footer is included here */}
+        <Footer />
       </div>
     </Router>
   );
