@@ -31,7 +31,6 @@ function ViewBooks() {
               key={book.id}
               className="card bg-white text-black p-6 rounded-lg shadow-lg hover:shadow-xl hover:transform hover:-translate-y-2 transition"
             >
-              {/* Display Book Image */}
               <div className="relative">
                 <img
                   src={book.PhotoURL}
@@ -40,7 +39,6 @@ function ViewBooks() {
                   style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'contain' }}
                 />
               </div>
-              {/* Center align Book Name */}
               <h3 className="text-2xl font-semibold mb-4 text-center">{book.BookName}</h3>
               <p className="mb-2">Author: {book.AuthorName}</p>
               <p className="mb-2">ISBN: {book.ISBN}</p>

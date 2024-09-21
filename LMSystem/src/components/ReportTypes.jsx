@@ -14,19 +14,19 @@ function ReportTypes() {
       <div className="flex flex-col space-y-4">
         <button
           onClick={() => handleReportSelection('home')}
-          className="bg-blue-600 text-white py-3 px-6 rounded"
+          className="bg-[#000000] text-white py-3 px-6 rounded"
         >
           Books Borrowed by Members
         </button>
         <button
           onClick={() => handleReportSelection('home')}
-          className="bg-green-600 text-white py-3 px-6 rounded"
+          className="bg-[#000000] text-white py-3 px-6 rounded"
         >
           Member Activity
         </button>
         <button
           onClick={() => handleReportSelection('home')}
-          className="bg-purple-600 text-white py-3 px-6 rounded"
+          className="bg-[#000000] text-white py-3 px-6 rounded"
         >
           Book Availability
         </button>
